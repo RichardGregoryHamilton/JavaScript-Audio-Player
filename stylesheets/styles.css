@@ -1,27 +1,41 @@
-#output table { 
-  border-collapse: collapse;
-  font-family: sans-serif;
-  font-size: 16px;
+section {
+  margin-top: -2%;
 }
 
-#output td { 
-  border: 1px lightgray solid;
-  padding: 2px;
+#upsell div {
+  display: none;
 }
 
-#output img {
-  height: 100px; 
-  width: auto; 
+.lead {
+  height: 200px;
+  background-color: #ddd;
+  color: #666;
+  padding: 30px;
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5%;
-  width: 40%;
+.playControls {
+  margin-top: 30px;
 }
 
-#search-form {
+.artistAlbumInfo {
   text-align: center;
-  margin-bottom: 30px;
+  background-color: #ddd;
+}
+
+.albumArt {
+  border-radius: 50%;
+  border: 3px solid #ccc;
+}
+
+.frequency {
+  margin-top: 5px;
+  transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+.frequency div {
+  height: 6px;
+  background-color: #ccc;
+  border: 1px dotted #ddd;
 }
