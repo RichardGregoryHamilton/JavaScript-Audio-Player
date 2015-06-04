@@ -10,9 +10,11 @@ $(document).ready(function() {
     'domain': domain,
     'listener': 'callback_object'
     };
+		
   var params = {
     'allowScriptAccess': 'always'
   };
+	
   var attributes = {};
   swfobject.embedSWF('http://www.rdio.com/api/swf/',
       'apiswf',
@@ -44,14 +46,12 @@ $(document).ready(function() {
       clicks += 1;
       if (clicks % 2 === 1) {
           $(this).html(" Un-mute");
-          $(this).removeClass("fa fa-volume-off");
-          $(this).addClass("fa fa-volume-up");
+          $("#mute").chilren()[0].className = "fa fa-volume-up";
           apiswf.rdio_setVolume(0);
       }
       else {
         $(this).html(" Mute");
-        $(this).removeClass("fa fa-volume-up");
-        $(this).addClass("fa fa-volume-off");
+        $("#mute").children()[0].className = "fa fa-volume-off";
         apiswf.rdio_setVolume(100);
       }
   });

@@ -3,7 +3,7 @@
   <head>
     <title>Rdio Player</title>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
   </head>
   
@@ -22,10 +22,11 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="songs.html">Find Songs<span class="sr-only">(current)</span></a></li>
+            <li><a href="songs.html">Find Songs<span class="sr-only">(current)</span></a></li>
             <li><a href="artists.html">Find Artists</a></li>
+						<li><a href="albums.html">Find Albums</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">+
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Sign In</a></li>
             <li><a href="#">Sign Up</a></li>
           </ul>
@@ -94,10 +95,10 @@
         </div>
   </div>
 
-    <script src="js/jquery-1.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="scripts/main.js"></script>
     
   </body>
 </html>

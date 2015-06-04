@@ -1,6 +1,15 @@
 table {
-  width: 600px;
+  width: 50%;
   margin: 30px auto 0 auto;
+}
+
+td > img {
+	height: 125px;
+	margin-right: 10px;
+}
+
+tbody tr {
+	height: 140px;
 }
 
 .search-form {

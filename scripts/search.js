@@ -2,8 +2,8 @@ function callback( obj ) {
     var i, data, html='';
     try {
         data = obj.query.results.json.data;
-        for (i = 0; i<data.length; i++) {
-            html += '<tr><td><img src="' + data[i].icon + '"></td><td>' + data[i].name + '</td></tr>';
+        for (i = 0; i < data.length; i++) {
+            html += '<tr><td><img src="' + data[i].icon + '"></td><td>' + data[i].name + '</td><td>' + data[i].id + '</td><td>' + data[i].length + " minutes" + '</td></tr>';
         }
         html = '<table>' + html + '</table>';
     }
