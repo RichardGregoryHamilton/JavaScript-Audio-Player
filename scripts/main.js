@@ -1,5 +1,5 @@
 var playback_token = "GAlVagTx_____2R2cHlzNHd5ZXg3Z2M0OXdoaDY3aHdrbmxvY2FsaG9zdCqGTDpK2YZa4I4Z8Q30yYY=";
-var domain = "localhost";
+var domain = "heroku";
 
 var apiswf = null;
 
