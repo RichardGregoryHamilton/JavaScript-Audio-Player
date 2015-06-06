@@ -1,4 +1,4 @@
-var playback_token = "GABVc2Rm_____2R2cHlzNHd5ZXg3Z2M0OXdoaDY3aHdrbnMYqXZvIDd3f64ukSHTqbI=";
+var playback_token = "GCNVc2V4_____2R2cHlzNHd5ZXg3Z2M0OXdoaDY3aHdrbnBvbGFyLWVzY2FycG1lbnQtNTc4Ny5oZXJva3VhcHAuY29tX5h-UYi3_C4BMzoNllEIfw=="
 var domain = "http://polar-escarpment-5787.herokuapp.com/";
 
 var apiswf = null;
