@@ -16,3 +16,7 @@ tbody tr {
   width: 30%;
   margin: 0 auto;
 }
+
+.song-key {
+	cursor: pointer;
+}

@@ -1,3 +1,7 @@
+body {
+  margin-bottom: 5%;
+}
+
 section {
   margin-top: -2%;
 }
@@ -38,4 +42,51 @@ section {
   height: 6px;
   background-color: #ccc;
   border: 1px dotted #ddd;
+}
+
+/* Search */
+
+table {
+  width: 55%;
+  margin: 30px auto 0 auto;
+}
+
+td > img {
+  height: 125px;
+  margin-right: 10px;
+}
+
+tbody tr {
+  height: 140px;
+}
+
+td:last-child {
+  width: 14%;
+}
+
+.search-form {
+  width: 38%;
+  margin: 0 auto;
+}
+
+.song-key {
+  cursor: pointer;
+}
+
+#album-header {
+  margin: 3% 0 3% 22%;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+#album-header li:first-child {
+  margin-right: 8%;
+}
+
+#album-header li:nth-child(2) {
+  margin-right: 32.5%;
+}
+
+#album-header li:nth-last-child(2) {
+  margin-right: 4.5%;
 }

@@ -24,7 +24,7 @@
           <ul class="nav navbar-nav">
             <li><a href="songs.html">Find Songs<span class="sr-only">(current)</span></a></li>
             <li><a href="artists.html">Find Artists</a></li>
-						<li><a href="albums.html">Find Albums</a></li>
+            <li><a href="albums.html">Find Albums</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Sign In</a></li>
@@ -93,12 +93,28 @@
             <h4>Position <p id="position"></p></h4>
           </div>
         </div>
-  </div>
+        
+        <div class="search-form">
+          <b>Enter keywords:</b>
+          <input id="keyword" type="text" placeholder="Enter an artist">
+          <button id="get-albums" onclick="search()" class="btn btn-primary">Get Albums</button>
+        </div>
+        
+        <ul class="list-inline" id="album-header">
+          <li>Image</li>
+          <li>Title</li>
+          <li>ID</li>
+          <li>Length</li>
+        </ul>
+        <div id="output"></div>
+        
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="scripts/main.js"></script>
+
     
   </body>
 </html>

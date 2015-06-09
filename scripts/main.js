@@ -10,11 +10,11 @@ $(document).ready(function() {
     'domain': domain,
     'listener': 'callback_object'
     };
-		
+    
   var params = {
     'allowScriptAccess': 'always'
   };
-	
+  
   var attributes = {};
   swfobject.embedSWF('http://www.rdio.com/api/swf/',
       'apiswf',
@@ -139,3 +139,43 @@ callback_object.updateFrequencyData = function updateFrequencyData(arrayAsString
     $(this).width(parseInt(parseFloat(arr[i])*500));
   })
 }
+
+/* Search */
+
+function callback( obj ) {
+    var html='';
+    try {
+        var data = obj.query.results.json.data;
+        for (var i = 0; i < 10; i++) {
+            html += '<tr><td><img src="' + data[i].icon + '"></td><td>' + data[i].name + '</td><td>' +
+                 "<a class='song-key song-" + (i + 1) + ">" + data[i].id + "</a>" + '</td><td>' +
+                 data[i].length + " minutes" + '</td></tr>';
+        }
+        html = '<table>' + html + '</table>';
+    }
+    catch(e) {
+        html = 'No search results.' 
+    }
+    document.getElementById('output').innerHTML = html;
+}
+
+// cross-domain ajax via proxy 
+function search() {
+    var keyword = document.getElementById('keyword').value;
+    keyword     = keyword.replace(/\s/g,'+');
+    var proxy   = 'https://query.yahooapis.com/v1/public/yql';
+    var query   = "?q=" + encodeURIComponent( "select * from json where url='http://rdio-service.herokuapp.com//search?q=" + keyword + "'" ); 
+    var options = '&diagnostics=true&format=json&callback=callback';
+    var head    = document.head
+    var script  = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src  = proxy + query + options;
+    head.appendChild(script);
+}
+    
+$(document).ready(function() {
+  $("#album-header").hide();
+  $("#get-albums").click(function() {
+    $("#album-header").show(2400);
+  });
+});
