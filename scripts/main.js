@@ -172,7 +172,20 @@ function search() {
     script.src  = proxy + query + options;
     head.appendChild(script);
 }
-    
+ 
+var button = document.getElementById("get-albums");
+button.addEventListener("click", function() {
+	window.setTimeout(function() {
+		play_key = document.getElementById("play_key").value;
+		links = document.querySelectorAll("td > a");
+		for (album = 0; album < 10; album++) {
+			links[album].addEventListener("click", function() {
+				apiswf.rdio_play($(this).html());
+			})
+		}
+	},4000);
+});
+ 
 $(document).ready(function() {
   $("#album-header").hide();
   $("#get-albums").click(function() {
