@@ -69,19 +69,19 @@ callback_object.ready = function ready(user) {
   });
 
   if (user == null) {
-    $('#nobody').show();
+			$('#nobody').show();
   } else if (user.isSubscriber) {
-    $('#subscriber').show();
+			$('#subscriber').show();
   } else if (user.isTrial) {
-    $('#trial').show();
+			$('#trial').show();
   } else if (user.isFree) {
-    $('#remaining').text(user.freeRemaining);
-    $('#free').show();
+			$('#remaining').text(user.freeRemaining);
+			$('#free').show();
   } else {
-    $('#nobody').show();
+			$('#nobody').show();
   }
 
-  console.log(user);
+		console.log(user);
 }
 
 callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) {
@@ -133,11 +133,11 @@ callback_object.playingSomewhereElse = function playingSomewhereElse() {
 
 callback_object.updateFrequencyData = function updateFrequencyData(arrayAsString) {
 
-  var arr = arrayAsString.split(',');
+		var arr = arrayAsString.split(',');
 
-  $('#freq div').each(function(i) {
-    $(this).width(parseInt(parseFloat(arr[i])*500));
-  })
+		$('#freq div').each(function(i) {
+				$(this).width(parseInt(parseFloat(arr[i])*500));
+		})
 }
 
 /* Search */
@@ -148,8 +148,8 @@ function callback( obj ) {
         var data = obj.query.results.json.data;
         for (var i = 0; i < 10; i++) {
             html += '<tr><td><img src="' + data[i].icon + '"></td><td>' + data[i].name + '</td><td>' +
-                 "<a class='song-key song-" + (i + 1) + ">" + data[i].id + "</a>" + '</td><td>' +
-                 data[i].length + " minutes" + '</td></tr>';
+						     data[i].id + '</td><td>' + "<a class='play'>" + "Play</a>" + '</td><td>' + 
+								 data[i].length + " minutes" + '</td></tr>';
         }
         html = '<table>' + html + '</table>';
     }
@@ -175,20 +175,19 @@ function search() {
  
 var button = document.getElementById("get-albums");
 button.addEventListener("click", function() {
-	window.setTimeout(function() {
-		play_key = document.getElementById("play_key").value;
-		links = document.querySelectorAll("td > a");
-		for (album = 0; album < 10; album++) {
-			links[album].addEventListener("click", function() {
-				apiswf.rdio_play($(this).html());
-			})
-		}
-	},4000);
+		window.setTimeout(function() {
+				var links = document.querySelectorAll("td > a");
+				for (var i = 0; i < 10; i++) {
+						links[i].addEventListener("click", function() {
+								apiswf.rdio_play(this.parentNode.previousSibling.innerHTML);
+					})
+				}
+		},4000);
 });
  
 $(document).ready(function() {
-  $("#album-header").hide();
-  $("#get-albums").click(function() {
-    $("#album-header").show(2400);
-  });
+		$("#album-header").hide();
+		$("#get-albums").click(function() {
+				$("#album-header").show(2400);
+		});
 });

@@ -22,8 +22,13 @@ section {
 }
 
 .artistAlbumInfo {
+	max-height: 250px;
   text-align: center;
   background-color: #ddd;
+}
+
+.artistAlbumInfo > img {
+	height: 100px;
 }
 
 .albumArt {
@@ -44,10 +49,14 @@ section {
   border: 1px dotted #ddd;
 }
 
+.play:hover {
+	cursor: pointer;
+}
+
 /* Search */
 
 table {
-  width: 55%;
+  width: 65%;
   margin: 30px auto 0 auto;
 }
 
@@ -58,6 +67,10 @@ td > img {
 
 tbody tr {
   height: 140px;
+}
+
+td:nth-child(2) {
+	width: 50%;
 }
 
 td:last-child {
@@ -74,19 +87,15 @@ td:last-child {
 }
 
 #album-header {
-  margin: 3% 0 3% 22%;
+  margin: 3% 0 3% 17%;
   font-size: 120%;
   font-weight: bold;
 }
 
 #album-header li:first-child {
-  margin-right: 8%;
+  margin-right: 10%;
 }
 
 #album-header li:nth-child(2) {
-  margin-right: 32.5%;
-}
-
-#album-header li:nth-last-child(2) {
-  margin-right: 4.5%;
+  margin-right: 33%;
 }

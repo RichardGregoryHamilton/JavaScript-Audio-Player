@@ -49,12 +49,7 @@
 
       <div id="apiswf"></div>
         <div class="well" style="overflow: hidden;">
-          <div class="row" style="margin-bottom: 10px;">
-            <div class="col-md-2">Enter Album Key</div>
-            <div class="col-md-10">
-              <input id="play_key" class="form-control" value="a594784">
-            </div>
-          </div>
+          
           <div class="row">
             <div class="col-md-6"> 
               <div class="playControls btn-group">
@@ -100,12 +95,13 @@
           <button id="get-albums" onclick="search()" class="btn btn-primary">Get Albums</button>
         </div>
         
-        <ul class="list-inline" id="album-header">
-          <li>Image</li>
-          <li>Title</li>
-          <li>ID</li>
-          <li>Length</li>
-        </ul>
+				<ul class="list-inline" id="album-header">
+					<li>Image</li>
+					<li>Title</li>
+					<li>Album ID</li>
+					<li>Play</li>
+					<li>Length</li>
+				</ul>
         <div id="output"></div>
         
     </div>
