@@ -86,7 +86,7 @@ td:nth-last-child(2) {
 }
 
 #album-header {
-  margin: 3% 0 3% 17%;
+  margin: 3% 0 0 17%;
   font-size: 120%;
   font-weight: bold;
 }
