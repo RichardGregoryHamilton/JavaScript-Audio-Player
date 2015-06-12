@@ -147,9 +147,8 @@ function callback( obj ) {
     try {
         var data = obj.query.results.json.data;
         for (var i = 0; i < 10; i++) {
-            html += '<tr><td><img src="' + data[i].icon + '"></td><td>' + data[i].name + '</td><td>' +
-						     data[i].id + '</td><td>' + "<a class='play'>" + "Play</a>" + '</td><td>' + 
-								 data[i].length + " minutes" + '</td></tr>';
+            html += '<tr><td><img src="' + data[i].icon + '"></td><td>' + "<a class='play'>" + data[i].name + '</a></td><td>' +
+						     data[i].id + '</td><td>' + data[i].length + " minutes" + '</td></tr>';
         }
         html = '<table>' + html + '</table>';
     }
@@ -176,10 +175,10 @@ function search() {
 var button = document.getElementById("get-albums");
 button.addEventListener("click", function() {
 		window.setTimeout(function() {
-				var links = document.querySelectorAll("td > a");
+				links = document.querySelectorAll("td > a");
 				for (var i = 0; i < 10; i++) {
 						links[i].addEventListener("click", function() {
-								apiswf.rdio_play(this.parentNode.previousSibling.innerHTML);
+								apiswf.rdio_play(this.parentNode.nextSibling.innerHTML);
 					})
 				}
 		},4000);

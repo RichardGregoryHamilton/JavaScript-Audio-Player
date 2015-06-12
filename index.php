@@ -34,9 +34,7 @@
       </div>
     </nav>
 
-    <section class="lead">
       <h1 class="text-center">Rdio Player</h1>
-    </section>
 
     <div class="container">
 
@@ -98,8 +96,6 @@
 				<ul class="list-inline" id="album-header">
 					<li>Image</li>
 					<li>Title</li>
-					<li>Album ID</li>
-					<li>Play</li>
 					<li>Length</li>
 				</ul>
         <div id="output"></div>
@@ -110,7 +106,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="scripts/main.js"></script>
-
     
   </body>
 </html>
