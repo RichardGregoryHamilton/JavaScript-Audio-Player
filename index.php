@@ -21,11 +21,6 @@
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="songs.html">Find Songs<span class="sr-only">(current)</span></a></li>
-            <li><a href="artists.html">Find Artists</a></li>
-            <li><a href="albums.html">Find Albums</a></li>
-          </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Sign In</a></li>
             <li><a href="#">Sign Up</a></li>
@@ -87,11 +82,18 @@
           </div>
         </div>
         
-        <div class="search-form">
-          <b>Enter keywords:</b>
-          <input id="keyword" type="text" placeholder="Enter an artist">
-          <button id="get-albums" onclick="search()" class="btn btn-primary">Get Albums</button>
-        </div>
+        <div class="search-labels">
+					<div id="label-box">
+						<span><b>Find By: </b></span>
+						<span class="label label-primary" id="album-label">Albums</span>
+						<span class="label label-success" id="artist-label">Artists</span>
+					</div>
+				</div>
+				
+				<div class="search-form">
+					<input id="keyword" type="text" placeholder="Enter an artist">
+					<button id="get-albums" class="btn btn-primary">Get Albums</button>
+				</div>
         
 				<ul class="list-inline" id="album-header">
 					<li>Image</li>

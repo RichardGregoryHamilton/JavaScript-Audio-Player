@@ -80,8 +80,26 @@ td:nth-last-child(2) {
 	display: none;
 }
 
+.search-labels {
+	width: 100%;
+	margin-bottom: 2%;
+}
+
+#label-box {
+	width: 20%;
+	margin: 0 auto;
+}
+
+#album-label, #artist-label {
+	width:30px;
+}
+
+#album-label:hover, #artist-label:hover {
+	cursor: pointer;
+}
+
 .search-form {
-  width: 38%;
+  width: 24.5%;
   margin: 0 auto;
 }
 

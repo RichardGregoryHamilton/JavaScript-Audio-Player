@@ -5,56 +5,44 @@ var apiswf = null;
 
 $(document).ready(function() {
 
-  var flashvars = {
-    'playbackToken': playback_token,
-    'domain': domain,
-    'listener': 'callback_object'
-    };
-    
-  var params = {
-    'allowScriptAccess': 'always'
-  };
-  
-  var attributes = {};
-  swfobject.embedSWF('http://www.rdio.com/api/swf/',
-      'apiswf',
-      1, 1, '9.0.0', 'expressInstall.swf', flashvars, params, attributes);
+		var flashvars = { 'playbackToken': playback_token,
+											'domain': domain,
+											'listener': 'callback_object'
+										};
+			
+		var params = { 'allowScriptAccess': 'always' };
+		
+		var attributes = {};
+		swfobject.embedSWF('http://www.rdio.com/api/swf/', 'apiswf', 1, 1, '9.0.0',
+                     	 'expressInstall.swf', flashvars, params, attributes);
 
 
-  $('#play').click(function() {
-    apiswf.rdio_play($('#play_key').val());
-  });
-  
-  $('#stop').click(function() { 
-      apiswf.rdio_stop(); 
-  });
-  
-  $('#pause').click(function() { 
-      apiswf.rdio_pause(); 
-  });
-  
-  $('#previous').click(function() { 
-      apiswf.rdio_previous(); 
-  });
-  
-  $('#next').click(function() { 
-      apiswf.rdio_next(); 
-  });
-  
-  var clicks = 0;
-  $("#mute").click(function() {
-      clicks += 1;
-      if (clicks % 2 === 1) {
-          $(this).html(" Un-mute");
-          $("#mute").chilren()[0].className = "fa fa-volume-up";
-          apiswf.rdio_setVolume(0);
-      }
-      else {
-        $(this).html(" Mute");
-        $("#mute").children()[0].className = "fa fa-volume-off";
-        apiswf.rdio_setVolume(100);
-      }
-  });
+		$('#play').click(function() {
+			apiswf.rdio_play($('#play_key').val());
+		});
+		
+		$('#stop').click(function() { 
+				apiswf.rdio_stop(); 
+		});
+		
+		$('#pause').click(function() { 
+				apiswf.rdio_pause(); 
+		});
+		
+		$('#previous').click(function() { 
+				apiswf.rdio_previous(); 
+		});
+		
+		$('#next').click(function() { 
+				apiswf.rdio_next(); 
+		});
+		
+		$("#mute").click(function() {
+				text = $(this).text();
+				$(this).text(text == " Mute" ? " Un-mute" : " Mute");
+				$(this).children().toggleClass("fa-volume-off");
+				apiswf.rdio_setVolume(0);
+		});
 });
 
 var callback_object = {};
@@ -63,10 +51,9 @@ callback_object.ready = function ready(user) {
 
   apiswf = $('#apiswf').get(0);
 
-  apiswf.rdio_startFrequencyAnalyzer({
-    frequencies: '10-band',
-    period: 100
-  });
+  apiswf.rdio_startFrequencyAnalyzer({ frequencies: '10-band',
+																			 period: 100
+																		});
 
   if (user == null) {
 			$('#nobody').show();
@@ -101,34 +88,8 @@ callback_object.playingTrackChanged = function playingTrackChanged(playingTrack,
     }
 }
 
-callback_object.playingSourceChanged = function playingSourceChanged(playingSource) {
-
-}
-
-callback_object.volumeChanged = function volumeChanged(volume) {
-
-}
-
-callback_object.muteChanged = function muteChanged(mute) {
-
-}
-
 callback_object.positionChanged = function positionChanged(position) {
     $('#position').text(position);
-}
-
-callback_object.queueChanged = function queueChanged(newQueue) {
-}
-
-callback_object.shuffleChanged = function shuffleChanged(shuffle) {
-}
-
-callback_object.repeatChanged = function repeatChanged(repeatMode) {
-
-}
-
-callback_object.playingSomewhereElse = function playingSomewhereElse() {
-
 }
 
 callback_object.updateFrequencyData = function updateFrequencyData(arrayAsString) {
@@ -143,7 +104,7 @@ callback_object.updateFrequencyData = function updateFrequencyData(arrayAsString
 /* Search */
 
 function callback( obj ) {
-    var html='';
+    var html = '';
     try {
         var data = obj.query.results.json.data;
         for (var i = 0; i < 10; i++) {
@@ -172,21 +133,46 @@ function search() {
     head.appendChild(script);
 }
  
-var button = document.getElementById("get-albums");
-button.addEventListener("click", function() {
-		window.setTimeout(function() {
-				links = document.querySelectorAll("td > a");
-				for (var i = 0; i < 10; i++) {
-						links[i].addEventListener("click", function() {
-								apiswf.rdio_play(this.parentNode.nextSibling.innerHTML);
-					})
-				}
-		},4000);
-});
- 
+function showAlbums() {
+		$("#album-header").show(2000);
+		search();
+}
+
 $(document).ready(function() {
+		
 		$("#album-header").hide();
-		$("#get-albums").click(function() {
-				$("#album-header").show(2400);
+		
+		$("#get-albums, #keyword").on("click blur", function() {
+				window.setTimeout(function() {
+						links = $("td > a");
+						for (var i = 0; i < 10; i++) {
+								$(links).eq(i).on("click", function() {
+										apiswf.rdio_play($(this).parent().next().text());
+								})
+						}
+				},4000);
+		})
+		
+		$("#get-albums").on("click", function() {
+				showAlbums();
 		});
+		
+		$("#keyword").on("focus", function(){
+				$(this).on("keypress", function(event){
+						if (event.which === 13) {
+								showAlbums();
+								$("#keyword").blur();
+						}
+				});
+		});
+		$("#album-label").on("click", function() {
+			$("#get-albums").text("Get Albums");
+			$("#get-albums").removeClass("btn-success")
+			                .addClass("btn-primary");
+		})
+		$("#artist-label").on("click", function() {
+				$("#get-albums").text("Get Artists");
+				$("#get-albums").removeClass("btn-primary")
+				                .addClass("btn-success");
+		})
 });
