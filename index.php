@@ -83,23 +83,23 @@
         </div>
         
         <div class="search-labels">
-					<div id="label-box">
-						<span><b>Find By: </b></span>
-						<span class="label label-primary" id="album-label">Albums</span>
-						<span class="label label-success" id="artist-label">Artists</span>
-					</div>
-				</div>
-				
-				<div class="search-form">
-					<input id="keyword" type="text" placeholder="Enter an artist">
-					<button id="get-albums" class="btn btn-primary">Get Albums</button>
-				</div>
+          <div id="label-box">
+            <span><b>Find By: </b></span>
+            <span class="label label-primary" id="album-label">Albums</span>
+            <span class="label label-success" id="artist-label">Artists</span>
+          </div>
+        </div>
         
-				<ul class="list-inline" id="album-header">
-					<li>Image</li>
-					<li>Title</li>
-					<li>Length</li>
-				</ul>
+        <div class="search-form">
+          <input id="keyword" type="text" placeholder="Enter an artist">
+          <button id="get-albums" class="btn btn-primary">Get Albums</button>
+        </div>
+        
+        <ul class="list-inline" id="album-header">
+          <li>Image</li>
+          <li>Title</li>
+          <li>Length</li>
+        </ul>
         <div id="output"></div>
         
     </div>

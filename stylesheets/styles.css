@@ -1,10 +1,10 @@
 body {
-	background: #5A7749;
+  background: #5A7749;
   margin-bottom: 5%;
 }
 
 h1 {
-	margin-bottom: 1.5%;
+  margin-bottom: 1.5%;
 }
 
 #upsell div {
@@ -23,13 +23,13 @@ h1 {
 }
 
 .artistAlbumInfo {
-	max-height: 250px;
+  max-height: 250px;
   text-align: center;
   background-color: #ddd;
 }
 
 .artistAlbumInfo > img {
-	height: 100px;
+  height: 100px;
 }
 
 .albumArt {
@@ -51,51 +51,51 @@ h1 {
 }
 
 .play:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /* Search */
 
 table {
-	background: rgb(0,255,197);
+  background: rgb(0,255,197);
   width: 65%;
   margin: 0 auto;
 }
 
 td > img {
-	height: 137.5px;
-	margin-right: 10px;
+  height: 137.5px;
+  margin-right: 10px;
 }
 
 tbody tr {
   height: 140px;
-	border: 2px solid black;
+  border: 2px solid black;
 }
 
 td:nth-child(2) {
-	width: 50%;
+  width: 50%;
 }
 
 td:nth-last-child(2) {
-	display: none;
+  display: none;
 }
 
 .search-labels {
-	width: 100%;
-	margin-bottom: 2%;
+  width: 100%;
+  margin-bottom: 2%;
 }
 
 #label-box {
-	width: 20%;
-	margin: 0 auto;
+  width: 20%;
+  margin: 0 auto;
 }
 
 #album-label, #artist-label {
-	width:30px;
+  width:30px;
 }
 
 #album-label:hover, #artist-label:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .search-form {
