@@ -21,10 +21,6 @@
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Sign In</a></li>
-            <li><a href="#">Sign Up</a></li>
-          </ul>
         </div>
       </div>
     </nav>
@@ -37,7 +33,7 @@
         <div id="subscriber">You are an Rdio subscriber. You're awesome.</div>
         <div id="trial">You are an Rdio trial user, Subscribe now!</div>
         <div id="free">You are an Rdio Free user with <span id="remaining"></span>% of your quota remaining, subscribe now!</div>
-        <div id="nobody">To hear full tracks subscribe to Rdio.</div>
+        <div id="nobody">To hear full tracks subscribe to <a href="https://www.rdio.com/account/signup/">Rdio</a>.</div>
       </div>
 
       <div id="apiswf"></div>
