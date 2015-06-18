@@ -11,6 +11,11 @@ h1 {
   display: none;
 }
 
+#subscribe {
+	color: green;
+	font-weight: bold;
+}
+
 .lead {
   height: 200px;
   background-color: #ddd;

@@ -141,6 +141,7 @@ function showAlbums() {
 $(document).ready(function() {
     
     $("#album-header").hide();
+		$(".row, .well").hide();
     
     $("#get-albums, #keyword").on("click blur", function() {
         window.setTimeout(function() {
@@ -148,6 +149,7 @@ $(document).ready(function() {
             for (var i = 0; i < 10; i++) {
                 $(links).eq(i).on("click", function() {
                     apiswf.rdio_play($(this).parent().next().text());
+										$('.row, .well').show();
                 })
             }
         },4000);
