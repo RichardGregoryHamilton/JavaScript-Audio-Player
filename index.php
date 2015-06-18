@@ -33,7 +33,7 @@
         <div id="subscriber">You are an Rdio subscriber. You're awesome.</div>
         <div id="trial">You are an Rdio trial user, Subscribe now!</div>
         <div id="free">You are an Rdio Free user with <span id="remaining"></span>% of your quota remaining, subscribe now!</div>
-        <div id="nobody">To hear full tracks subscribe to <a href="https://www.rdio.com/account/signup/">Rdio</a>.</div>
+        <div id="nobody">To hear full tracks subscribe to <a id="subscribe" href="https://www.rdio.com/account/signup/">Rdio</a>.</div>
       </div>
 
       <div id="apiswf"></div>
